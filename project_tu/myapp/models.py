@@ -37,8 +37,8 @@ class item_category(models.Model):
     	unique_together=("category_id","item_id")#联合主键
 
 class record(models.Model):
-	id_1 = models.ForeignKey('user',on_delete=models.CASCADE)
-	id_2 = models.CharField(max_length=10)
+	id_1 = models.ForeignKey('user',on_delete=models.CASCADE,related_name='id_1')
+	id_2 = models.ForeignKey('user',on_delete=models.CASCADE,related_name='id_2')
 	item_id = models.ForeignKey('item',on_delete=models.CASCADE)
 	time = models.DateTimeField(auto_now_add=True)#完成失物招领的时间,自动生成当时时间
 	tag = models.BooleanField()
