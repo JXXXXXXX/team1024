@@ -50,11 +50,11 @@ admin.site.register(record)
  - 测试语句
  ```
 from myapp.models import user,item,user_item,category,item_category,record
-a=user(id='160810206',pwd='123',name='涂彦伦',tel='17863110620',email='875103075@qq.com',tag=True)
+a=user(id='122815296',pwd='123',name='xxx',tel='13456789011',email='82710055@qq.com',tag=True)
 a.save()
 b=item(name='物品',time='2019-3-11',detail='我在xx丢的,样子是xx',place='大活',state='False',tag='False')
 b.save()#暂未插入图片
-aa=user.objects.get(id='160810206')
+aa=user.objects.get(id='150840206')
 bb=item.objects.get(id=1)
 cc=user_item(user_id=aa,item_id=bb)#这时候cc里面存的是对象,cc.item_id是一个item实例,cc.item_id.id才是item_id的值
 cc.save()
@@ -62,6 +62,6 @@ d=category(name='一卡通')#id会从1自增可以不赋值
 d.save()
 ee=item_category(category_id=d,item_id=bb)
 ee.save()
-ff=record(id_1=aa,id_2='160810207',item_id=bb,tag=True)
+ff=record(id_1=aa,id_2='163810707',item_id=bb,tag=True)
 ff.save()
 ```
